@@ -46,7 +46,6 @@ group :test do
   gem 'rspec_junit_formatter'
   gem 'rspec-rails'
   gem 'simplecov'
-  gem 'rspec-rails'
   gem 'factory_bot_rails'
   gem 'faker'
   gem 'fast_jsonapi'
