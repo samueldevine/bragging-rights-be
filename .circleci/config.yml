@@ -26,8 +26,8 @@ jobs: # a collection of steps
       - image: circleci/postgres:11 # database image
         environment: # environment variables for database, it is kind of obvious but it is important that they match with your test config in database.yml
           POSTGRES_USER: postgres
-          POSTGRES_DB: bragging-rights-be_development
-          POSTGRES_PASSWORD: bragging-rights-be_development
+          POSTGRES_DB: bragging-rights-be_test
+          POSTGRES_PASSWORD: bragging-rights-be_test
     steps: # a collection of executable commands
       - checkout # special step to check out source code to working directory
       # Which version of bundler?
