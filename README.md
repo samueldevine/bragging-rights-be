@@ -11,7 +11,7 @@
 This app is created with a service oriented architecture.
 
 ## Schema
-Limited user data and high-scores are stored on a Users table in our backend db.
+<img width="658" alt="Bragging Rights Shcema copy" src="https://app.dbdesigner.net/designer/schema/488102">
 
 ## Tools Used:
 - Rails 5.2.6
