@@ -49,7 +49,7 @@ group :test do
   gem 'simplecov'
   gem 'factory_bot_rails'
   gem 'faker'
-  gem 'fast_jsonapi'
+  gem 'jsonapi-serializer'
   gem 'pry'
   gem 'shoulda-matchers', '~> 3.1'
   gem 'webmock'
