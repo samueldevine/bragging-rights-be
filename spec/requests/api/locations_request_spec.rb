@@ -18,7 +18,7 @@ require 'rails_helper'
      expect(location_data[:data]).to have_key(:attributes)
      expect(location_data[:data][:attributes]).to have_key(:city)
      expect(location_data[:data][:attributes]).to have_key(:state)
-     expect(location_data[:data][:attributes]).to have_key(:state)
+     expect(location_data[:data][:attributes]).to have_key(:country)
 
    end
  end
