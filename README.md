@@ -1,24 +1,40 @@
+
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### Bragging Rights Comic Trivia Challenge (2 week sprint)
+### Chaz Simons, Sam Devine, Matthew Kimball, Ted Staros & Christian Valesares
+---
 
-Things you may want to cover:
+"Bragging Rights" is a trivia competition that consumes an open trivia api and IP address locator api and uses Twitter OAth to allow users to prove they have the most comic related trivia in their area.
 
-* Ruby version
+## Architecture
+This app is created with a service oriented architecture.
 
-* System dependencies
+## Schema
+Limited user data and high-scores are stored on a Users table in our backend db.
 
-* Configuration
+## Tools Used:
+- Rails 5.2.6
+- Ruby 2.7.2
+- PostgreSQL
+- Heroku (https://frozen-peak-55560.herokuapp.com)
+- Twitter OAth
+- Circle CI
 
-* Database creation
+## Setup
 
-* Database initialization
+* From the command line, install gems and set up your DB:
+    * `bundle`
+    * `rails db:create`
+* Run the test suite with `bundle exec rspec`.
+* Run your development server with `rails s` to see the app in action.
 
-* How to run the test suite
+## The following pages are built for the platform:
+- Login
+- Dashboard
+- Trivia Questions
+- Highscores
 
-* Services (job queues, cache servers, search engines, etc.)
+## APIs
 
-* Deployment instructions
-
-* ...
+<!-- Potentially add links to the APIs we are using or move the description to this section -->
