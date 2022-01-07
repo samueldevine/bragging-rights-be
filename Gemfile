@@ -26,6 +26,7 @@ gem 'puma', '~> 3.11'
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'jsonapi-serializer'
 gem 'figaro'
+gem 'faraday'
 
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 # gem 'rack-cors'
@@ -48,7 +49,7 @@ group :test do
   gem 'simplecov'
   gem 'factory_bot_rails'
   gem 'faker'
-  gem 'fast_jsonapi'
+  gem 'jsonapi-serializer'
   gem 'pry'
   gem 'shoulda-matchers', '~> 3.1'
   gem 'webmock'
