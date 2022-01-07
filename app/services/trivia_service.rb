@@ -9,7 +9,7 @@ class TriviaService
     end
 
     def conn
-      Faraday.new(url: "https://opentdb.com/")
+      Faraday.new("https://opentdb.com/")
     end
 
     def parse_data(response)
