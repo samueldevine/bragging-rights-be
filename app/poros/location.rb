@@ -5,7 +5,6 @@ class Location
               :country
 
   def initialize(location_data)
-    @id      = 'no_id'
     @city    = location_data[:city]
     @state   = location_data[:regionName]
     @country = location_data[:country]
