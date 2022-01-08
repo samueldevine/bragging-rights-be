@@ -1,5 +1,5 @@
 
-![Imgur](https://i.imgur.com/oMvHtVB.png)
+![Imgur](https://i.imgur.com/lq0RgRC.png)
 
 A Comic Trivia Challenge (2 week sprint)
 ----------------------------------------
