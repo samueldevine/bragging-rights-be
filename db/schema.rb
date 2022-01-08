@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 2022_01_08_175912) do
     t.time "game_time"
     t.string "city"
     t.string "state"
+    t.string "country"
   end
 
 end
