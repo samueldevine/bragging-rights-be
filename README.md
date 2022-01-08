@@ -1,7 +1,7 @@
 
-# README
+![Imgur](https://i.imgur.com/oMvHtVB.png)
 
-### Bragging Rights Comic Trivia Challenge (2 week sprint)
+--- A Comic Trivia Challenge (2 week sprint)
 ### Chaz Simons, Sam Devine, Matthew Kimball, Ted Staros & Christian Valesares
 
 ![CircleCI](https://img.shields.io/circleci/build/github/samueldevine/bragging-rights-be/main)
