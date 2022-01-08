@@ -16,7 +16,7 @@ A Comic Trivia Challenge (2 week sprint)
 This app is created with a service oriented architecture.
 
 ## Schema
-<img width="658" alt="Bragging Rights Shcema copy" src="https://app.dbdesigner.net/designer/schema/488102">
+<img width="658" alt="Bragging Rights Schema copy" src="https://app.dbdesigner.net/designer/schema/488102">
 
 ## Tools Used:
 - Rails 5.2.6
