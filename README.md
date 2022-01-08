@@ -4,7 +4,9 @@
 ### Bragging Rights Comic Trivia Challenge (2 week sprint)
 ### Chaz Simons, Sam Devine, Matthew Kimball, Ted Staros & Christian Valesares
 
-https://img.shields.io/circleci/build/github/samueldevine/bragging-rights-be/main
+![CircleCI](https://img.shields.io/circleci/build/github/samueldevine/bragging-rights-be/main)
+![Ruby](https://img.shields.io/badge/Ruby-v2.7.2-red)
+![Rails](https://img.shields.io/badge/Rails-v5.2.6-red)
 ---
 
 "Bragging Rights" is a trivia competition that consumes an open trivia api and IP address locator api and uses Twitter OAth to allow users to prove they have the most comic related trivia in their area.
