@@ -10,7 +10,8 @@ A Comic Trivia Challenge (2 week sprint)
 ![Rails](https://img.shields.io/badge/Rails-v5.2.6-red)
 ---
 
-"Bragging Rights" is a trivia competition that consumes an open trivia api and IP address locator api and uses Twitter OAth to allow users to prove they have the most comic related trivia in their area.
+"Bragging Rights" is a trivia competition app designed to consume two external APIs to gather questions and location data of players, and pass the information to our front-end application. It's also responsible for scoring games, containing the score and location data received from the players.
+
 
 ## Architecture
 This app is created with a service oriented architecture.
@@ -22,7 +23,7 @@ This app is created with a service oriented architecture.
 - Rails 5.2.6
 - Ruby 2.7.2
 - PostgreSQL
-- Heroku (https://frozen-peak-55560.herokuapp.com)
+- Heroku (https://fast-inlet-74665.herokuapp.com)
 - Twitter OAth
 - Circle CI
 
@@ -30,7 +31,7 @@ This app is created with a service oriented architecture.
 
 * From the command line, install gems and set up your DB:
     * `bundle`
-    * `rails db:create`
+    * `rails db:{create,migrate}`
 * Run the test suite with `bundle exec rspec`.
 * Run your development server with `rails s` to see the app in action.
 
