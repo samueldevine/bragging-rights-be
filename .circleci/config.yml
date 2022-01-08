@@ -44,7 +44,7 @@ jobs: # a collection of steps
       # Read about caching dependencies: https://circleci.com/docs/2.0/caching/
       - restore_cache:
           keys:
-            - fast-inlet-74665-bundle-v2-{{ cache_v2 }}{{ checksum "Gemfile.lock" }}
+            - fast-inlet-74665-bundle-v2-cache_v2-{{ checksum "Gemfile.lock" }}
             - fast-inlet-74665-bundle-v2-
       - run: # Install Ruby dependencies
           name: Bundle Install
