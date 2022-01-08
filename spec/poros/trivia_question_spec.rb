@@ -25,6 +25,6 @@ RSpec.describe "Trivia Question" do
     expect(question.question).to eq("In Marvel Comics, Taurus is the founder and leader of which criminal organization?")
     expect(question.correct_answer).to eq("Zodiac")
     expect(question.incorrect_answers).to eq(["Scorpio", "Tiger Mafia", "The Union"])
-    #test for @answers being randomized
+    expect(question.answers.count).to eq(4)
   end
 end

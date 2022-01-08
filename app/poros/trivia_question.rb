@@ -10,6 +10,7 @@ class TriviaQuestion
   def initialize(info)
     @category           = info[:category]
     @type               = info[:type]
+    #left out for proof of concept but need for stretch scoring goals
     # @difficulty         = info[:difficulty]
     @question           = info[:question]
     @correct_answer     = info[:correct_answer]
@@ -19,7 +20,7 @@ class TriviaQuestion
 
   def randomized_answers
     sample = []
-    sample << @incorrect_answers && @correct_answer
+    sample << @incorrect_answers && sample << @correct_answer
     sample.flatten.shuffle!
   end
 end

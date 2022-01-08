@@ -6,6 +6,8 @@ RSpec.describe TriviaFacade do
       question = TriviaFacade.trivia
 
       expect(question.first).to be_a TriviaQuestion
+      expect(question.first.incorrect_answers.count).to eq(3)
+      expect(question.first.answers.count).to eq(4)
     end
   end
 end
