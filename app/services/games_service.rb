@@ -1,4 +1,4 @@
-class TriviaService
+class GamesService
   class << self
     def get_url(url)
       parse_data(conn.get(url))
