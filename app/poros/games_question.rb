@@ -1,4 +1,4 @@
-class TriviaQuestion
+class GamesQuestion
   attr_reader :category,
               :type,
               # :difficulty,

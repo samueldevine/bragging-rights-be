@@ -1,9 +1,9 @@
 require 'rails_helper'
 
-RSpec.describe TriviaService do
+RSpec.describe GamesService do
   describe 'conn' do
     it 'has a connection to opentdb' do
-      conn = TriviaService.conn
+      conn = GamesService.conn
 
       expect(conn).to be_a Faraday::Connection
     end
