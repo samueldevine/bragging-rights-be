@@ -9,5 +9,17 @@ RSpec.describe 'Questions Index' do
 
     questions = JSON.parse(response.body, symbolize_names: true)
 
+    # require "pry"; binding.pry
+    expect(questions[:data].count).to eq(50)
+    questions[:data].each do |question|
+      expect(question[:attributes]).to have_key(:id)
+      expect(question[:attributes][:id]).to be_a(String)
+      expect(question[:attributes]).to have_key(:question)
+      expect(question[:attributes][:question]).to be_a(String)
+      expect(question[:attributes]).to have_key(:correct_answer)
+      expect(question[:attributes][:correct_answer]).to be_a(String)
+      expect(question[:attributes]).to have_key(:answers)
+      expect(question[:attributes][:answers]).to be_a(Array)
+    end
   end
 end
