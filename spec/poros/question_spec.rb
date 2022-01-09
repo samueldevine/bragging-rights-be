@@ -1,19 +1,19 @@
 require 'rails_helper'
 
-RSpec.describe "Games Question" do
+RSpec.describe "Question" do
   it 'exists' do
-    question = GamesQuestion.new(category: "Entertainment: Comics",
+    question = Question.new(category: "Entertainment: Comics",
                                   type: "multiple",
                                   question: "In Marvel Comics, Taurus is the founder and leader of which criminal organization?",
                                   correct_answer: "Zodiac",
                                   incorrect_answers: ["Scorpio", "Tiger Mafia", "The Union"]
                               )
 
-    expect(question).to be_an_instance_of(GamesQuestion)
+    expect(question).to be_an_instance_of(Question)
   end
 
   it 'has readable attributes' do
-    question = GamesQuestion.new(category: "Entertainment: Comics",
+    question = Question.new(category: "Entertainment: Comics",
                                   type: "multiple",
                                   question: "In Marvel Comics, Taurus is the founder and leader of which criminal organization?",
                                   correct_answer: "Zodiac",

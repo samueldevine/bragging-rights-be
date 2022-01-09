@@ -34,9 +34,6 @@ RSpec.describe Game do
   end
 
   describe 'methods' do
-    xit 'can find top score by user' do
-    end
-
     it 'can find top score by city' do
       expect(Game.top_scores_by_location("city", "Denver")).to eq([@game, @game3, @game2])
     end

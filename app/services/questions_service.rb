@@ -1,4 +1,4 @@
-class GamesService
+class QuestionsService
   class << self
     def get_url(url)
       parse_data(conn.get(url))
