@@ -9,7 +9,7 @@ class Question
               :id
 
   def initialize(info)
-    @id                 = 0
+    @id                 = info[:id]
     @category           = info[:category]
     @type               = info[:type]
     #left out for proof of concept but need for stretch scoring goals

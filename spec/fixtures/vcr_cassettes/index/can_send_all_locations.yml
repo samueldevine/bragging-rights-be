@@ -19,7 +19,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sun, 09 Jan 2022 23:03:36 GMT
+      - Sun, 09 Jan 2022 23:39:07 GMT
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
@@ -36,5 +36,5 @@ http_interactions:
         Vegas","zip":"89169","lat":36.1214,"lon":-115.141,"timezone":"America/Los_Angeles","isp":"Cox
         Communications Inc.","org":"Cox Communications","as":"AS22773 Cox Communications
         Inc.","query":"98.160.143.100"}'
-  recorded_at: Sun, 09 Jan 2022 23:03:36 GMT
+  recorded_at: Sun, 09 Jan 2022 23:39:08 GMT
 recorded_with: VCR 6.0.0

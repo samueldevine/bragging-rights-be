@@ -19,7 +19,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sun, 09 Jan 2022 23:03:36 GMT
+      - Sun, 09 Jan 2022 23:39:08 GMT
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
@@ -34,5 +34,5 @@ http_interactions:
       encoding: UTF-8
       string: '{"status":"success","country":"United States","countryCode":"US","region":"CO","regionName":"Colorado","city":"Denver","zip":"80203","lat":39.7277,"lon":-104.9815,"timezone":"America/Denver","isp":"Starry,
         Inc.","org":"Starry, Inc","as":"AS395354 Starry, Inc.","query":"38.34.99.130"}'
-  recorded_at: Sun, 09 Jan 2022 23:03:36 GMT
+  recorded_at: Sun, 09 Jan 2022 23:39:08 GMT
 recorded_with: VCR 6.0.0
