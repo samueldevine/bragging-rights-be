@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
       resources :questions, only: :index
 
-      resources :scores, only: %i[show index]
+      resources :scores, only: %i[show index create]
 
     end
   end

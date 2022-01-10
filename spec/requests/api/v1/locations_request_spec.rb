@@ -1,9 +1,9 @@
 require 'rails_helper'
 
  RSpec.describe 'index', :type => :request  do
-   it "can send all locations",:vcr do
+   it "can return all locational data for user",:vcr do
 
-     get '/api/v1/locations'
+     get '/api/v1/locations',params: {ip_address: "98.160.143.100"}
 
      headers = { "ACCEPT" => "application/json" }
      expect(response.content_type).to eq("application/json")

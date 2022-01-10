@@ -9,7 +9,6 @@ RSpec.describe 'Questions Index' do
 
     questions = JSON.parse(response.body, symbolize_names: true)
 
-    # require "pry"; binding.pry
     expect(questions[:data].count).to eq(50)
     questions[:data].each do |question|
       expect(question[:attributes]).to have_key(:id)
