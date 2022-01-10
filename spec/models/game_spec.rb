@@ -5,14 +5,14 @@ RSpec.describe Game do
     @user_id = 1
     @game = Game.create(score: 100,
                   game_time: Time.now,
-                  @user_id: 1,
+                  user_id: @user_id,
                   city: "Denver",
                   state: "CO",
                   country: "USA"
                 )
     @game2 = Game.create(score: 10,
                   game_time: Time.now,
-                  @user_id: 1,
+                  user_id: @user_id,
                   city: "Denver",
                   state: "CO",
                   country: "USA"
@@ -36,7 +36,7 @@ RSpec.describe Game do
 
   describe 'methods' do
     it 'can find top score by user' do
-      expect(Game.high_score(1)).to eq(@game)
+      expect(Game.high_score(@user_id)).to eq(@game)
     end
 
     it 'can find top score by city' do
