@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
       resources :questions, only: :index
 
-      resources :games, only: [:show, :index]
+      resources :games, only: [:show, :index, :create]
 
     end
   end

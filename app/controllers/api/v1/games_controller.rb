@@ -6,4 +6,15 @@ class Api::V1::GamesController < ApplicationController
   def show
     render json: GameSerializer.new(Game.high_score(params[:user_id]))
   end
+
+  def create
+    require "pry"; binding.pry
+    Game.create(game_params)
+  end
+
+  private
+
+  def game_params
+    params.require(:game).permit(:user_id, :score, :city, :state, :country, :game_time)
+  end
 end
