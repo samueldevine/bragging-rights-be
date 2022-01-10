@@ -4,6 +4,6 @@ class Api::V1::GamesController < ApplicationController
   end
 
   def show
-    #user
+    render json: GameSerializer.new(Game.high_score(params[:user_id]))
   end
 end
