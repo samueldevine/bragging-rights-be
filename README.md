@@ -49,7 +49,7 @@ This app is created with a service oriented architecture.
 ```
    - Use this endpoint to return an individual user's highest score.
 ```ruby
-   POST /api/v1/games/new 
+   POST /api/v1/games 
 ```
    - Use this endpoint to record new scores to the database.
 ```ruby
