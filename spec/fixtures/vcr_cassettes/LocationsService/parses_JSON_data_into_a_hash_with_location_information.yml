@@ -1,0 +1,38 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://ip-api.com/json/38.34.99.130
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.0.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 10 Jan 2022 23:00:20 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '284'
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Ttl:
+      - '60'
+      X-Rl:
+      - '44'
+    body:
+      encoding: UTF-8
+      string: '{"status":"success","country":"United States","countryCode":"US","region":"CO","regionName":"Colorado","city":"Denver","zip":"80203","lat":39.7277,"lon":-104.9815,"timezone":"America/Denver","isp":"Starry,
+        Inc.","org":"Starry, Inc","as":"AS395354 Starry, Inc.","query":"38.34.99.130"}'
+  recorded_at: Mon, 10 Jan 2022 23:00:21 GMT
+recorded_with: VCR 6.0.0

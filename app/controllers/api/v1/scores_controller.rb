@@ -8,7 +8,7 @@ class Api::V1::ScoresController < ApplicationController
   end
 
   def create
-    test = Score.create(score_params)
+    Score.create(score_params)
   end
   
   private
