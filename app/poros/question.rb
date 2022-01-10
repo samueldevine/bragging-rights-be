@@ -1,13 +1,15 @@
-class GamesQuestion
+class Question
   attr_reader :category,
               :type,
               # :difficulty,
               :question,
               :correct_answer,
               :incorrect_answers,
-              :answers
+              :answers,
+              :id
 
   def initialize(info)
+    @id                 = info[:id]
     @category           = info[:category]
     @type               = info[:type]
     #left out for proof of concept but need for stretch scoring goals
