@@ -127,5 +127,20 @@ RSpec.describe "Scores Index" do
      expect(score[:data][:attributes]).to have_key(:state)
      expect(score[:data][:attributes]).to have_key(:country)
   end
+
+  it 'can create a new score', :vcr do
+    game_params = {user_id: 7, score: 1000, ip_address: '98.160.143.100', game_time: 5.30}
+    headers = {"CONTENT_TYPE" => "application/json"}
+
+    post '/api/v1/scores', headers: headers, params: JSON.generate(score: game_params)
+
+    created_score = Score.last
+
+    expect(response).to be_successful
+    expect(created_score.user_id).to eq(game_params[:user_id])
+    expect(created_score.score).to eq(game_params[:score])
+    expect(created_score.city).to eq('Las Vegas')
+    expect(created_score.game_time).to eq(game_params[:game_time])
+  end
 end
 

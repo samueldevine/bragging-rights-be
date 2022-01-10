@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://ip-api.com/json/
+    uri: http://ip-api.com/json/98.160.143.100
     body:
       encoding: US-ASCII
       string: ''
@@ -19,7 +19,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sun, 09 Jan 2022 23:39:07 GMT
+      - Mon, 10 Jan 2022 22:54:44 GMT
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
@@ -27,14 +27,14 @@ http_interactions:
       Access-Control-Allow-Origin:
       - "*"
       X-Ttl:
-      - '59'
+      - '60'
       X-Rl:
-      - '43'
+      - '44'
     body:
       encoding: UTF-8
       string: '{"status":"success","country":"United States","countryCode":"US","region":"NV","regionName":"Nevada","city":"Las
         Vegas","zip":"89169","lat":36.1214,"lon":-115.141,"timezone":"America/Los_Angeles","isp":"Cox
         Communications Inc.","org":"Cox Communications","as":"AS22773 Cox Communications
         Inc.","query":"98.160.143.100"}'
-  recorded_at: Sun, 09 Jan 2022 23:39:08 GMT
+  recorded_at: Mon, 10 Jan 2022 22:54:44 GMT
 recorded_with: VCR 6.0.0
