@@ -87,7 +87,7 @@ If left out, this endpoint will return unfiltered results from any location.
 #### 3. High Scores (single user)
 
 ```ruby
-   GET /api/v1/scores/:id params: {user_id: user.id}
+   GET /api/v1/scores/:id, params: {user_id: user.id}
 ```
 Returns an individual user's highest score.
 ***
