@@ -69,7 +69,7 @@ Example response:
 #### 2. High Scores (all users)
 
 ```ruby
-   GET /api/v1/games?GEO_SCOPE=USER_LOCATION
+   GET /api/v1/scores?GEO_SCOPE=USER_LOCATION
 ```
 GEO_SCOPE is an _optional_ parameter for filtering results. Options for GEO_SCOPE include
    - city
@@ -77,9 +77,9 @@ GEO_SCOPE is an _optional_ parameter for filtering results. Options for GEO_SCOP
    - country
 The following are all valid calls:
 ```ruby
-   GET /api/v1/games?city=Denver
-   GET /api/v1/games?state=Colorado
-   GET /api/v1/games?country=United+States
+   GET /api/v1/scores?city=Denver
+   GET /api/v1/scores?state=Colorado
+   GET /api/v1/scores?country=United+States
 ```
 
 If left out, this endpoint will return unfiltered results from any location.
@@ -87,14 +87,14 @@ If left out, this endpoint will return unfiltered results from any location.
 #### 3. High Scores (single user)
 
 ```ruby
-   GET /api/v1/games/:user_id
+   GET /api/v1/scores/:id params: {user_id: user.id}
 ```
 Returns an individual user's highest score.
 ***
 #### 4. Record a Game
 
 ```ruby
-   POST /api/v1/games 
+   POST /api/v1/scores 
 ```
 Record new scores to the database. Must include the following information:
 ???
