@@ -35,11 +35,27 @@ This app is created with a service oriented architecture.
 * Run the test suite with `bundle exec rspec`.
 * Run your development server with `rails s` to see the app in action.
 
-## The following pages are built for the platform:
-- Login
-- Dashboard
-- Trivia Questions
-- Highscores
+## The following endpoints are built for the platform:
+```ruby
+   GET /api/v1/questions
+```
+   - This endpoint returns a collection of trivia questions, answers and their correct answers. 
+```ruby
+   GET /api/v1/games
+```
+   - Use this endpoint to see high scores across select regions. 
+```ruby
+   GET /api/v1/games/:user_id
+```
+   - Use this endpoint to return an individual user's highest score.
+```ruby
+   POST /api/v1/games/new 
+```
+   - Use this endpoint to record new scores to the database.
+```ruby
+   GET /api/v1/locations
+```
+   - Use this endpoint to determine a user's location to make comparing scores a breeze.
 
 ## APIs
 
