@@ -36,26 +36,90 @@ This app is created with a service oriented architecture.
 * Run your development server with `rails s` to see the app in action.
 
 ## The following endpoints are built for the platform:
+
+#### 1. Questions
+
 ```ruby
    GET /api/v1/questions
+```   
+Returns a collection of comic-themed, multiple choice trivia questions, and their correct answers. The correct answer is included in the "answers" array, in a random (shuffled) position.
+Example response:
 ```
-   - This endpoint returns a collection of trivia questions, answers and their correct answers. 
+   {
+    "data": [
+        {
+            "id": "1",
+            "type": "question",
+            "attributes": {
+                "id": "1",
+                "question": "In Marvel Comics, Taurus is the founder and leader of which criminal organization?",
+                "correct_answer": "Zodiac",
+                "answers": [
+                    "The Union",
+                    "Scorpio",
+                    "Zodiac",
+                    "Tiger Mafia"
+                ]
+            }
+        }
+     ]
+   }
+```
+***
+#### 2. High Scores (all users)
+
 ```ruby
-   GET /api/v1/games
+   GET /api/v1/games?GEO_SCOPE=USER_LOCATION
 ```
-   - Use this endpoint to see high scores across select regions. 
+GEO_SCOPE is an _optional_ parameter for filtering results. Options for GEO_SCOPE include
+   - city
+   - state
+   - country
+The following are all valid calls:
+```ruby
+   GET /api/v1/games?city=Denver
+   GET /api/v1/games?state=Colorado
+   GET /api/v1/games?country=United+States
+```
+
+If left out, this endpoint will return unfiltered results from any location.
+***
+#### 3. High Scores (single user)
+
 ```ruby
    GET /api/v1/games/:user_id
 ```
-   - Use this endpoint to return an individual user's highest score.
+Returns an individual user's highest score.
+***
+#### 4. Record a Game
+
 ```ruby
    POST /api/v1/games 
 ```
-   - Use this endpoint to record new scores to the database.
+Record new scores to the database. Must include the following information:
+???
+***
+#### 5. User Location
+
 ```ruby
-   GET /api/v1/locations
+   GET /api/v1/locations?ip_address=<user_ip_address>
 ```
-   - Use this endpoint to determine a user's location to make comparing scores a breeze.
+Returns a user's city, state, and country to store game data and make comparing scores a breeze. Specify the user's actual IP Address as a required query parameter. Without it, incorrect locations may be returned.
+
+Example Response:
+```
+{
+    "data": {
+        "id": null,
+        "type": "location",
+        "attributes": {
+            "city": "Denver",
+            "state": "Colorado",
+            "country": "United States"
+        }
+    }
+}
+```
 
 ## APIs
 
