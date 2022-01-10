@@ -1,23 +1,23 @@
 require 'rails_helper'
 
-RSpec.describe Game do
+RSpec.describe Score do
   before :each do
     @user_id = 1
-    @game = Game.create(score: 100,
+    @score_1 = Score.create(score: 100,
                   game_time: Time.now,
                   user_id: @user_id,
                   city: "Denver",
                   state: "CO",
                   country: "USA"
                 )
-    @game2 = Game.create(score: 10,
+    @score_2 = Score.create(score: 10,
                   game_time: Time.now,
                   user_id: @user_id,
                   city: "Denver",
                   state: "CO",
                   country: "USA"
                 )
-    @game3 = Game.create(score: 50,
+    @score_3 = Score.create(score: 50,
                   game_time: Time.now,
                   user_id: 2,
                   city: "Denver",
@@ -25,7 +25,7 @@ RSpec.describe Game do
                   country: "USA"
                 )
 
-    @game4 = Game.create(score: 100,
+    @score_4 = Score.create(score: 100,
                   game_time: Time.now,
                   user_id: 3,
                   city: "Chicago",
@@ -36,11 +36,11 @@ RSpec.describe Game do
 
   describe 'methods' do
     it 'can find top score by user' do
-      expect(Game.high_score(@user_id)).to eq(@game)
+      expect(Score.high_score(@user_id)).to eq(@score_1)
     end
 
     it 'can find top score by city' do
-      expect(Game.top_scores_by_location("city", "Denver")).to eq([@game, @game3, @game2])
+      expect(Score.top_scores_by_location("city", "Denver")).to eq([@score_1, @score_3, @score_2])
     end
   end
 end

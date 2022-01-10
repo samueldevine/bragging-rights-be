@@ -6,28 +6,28 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-game = Game.create(score: 100,
+score_1 = Score.create(score: 100,
               game_time: 1.5,
               user_id: 1,
               city: "Denver",
               state: "CO",
               country: "USA"
             )
-game2 = Game.create(score: 10,
+score_2 = Score.create(score: 10,
               game_time: 1.3,
               user_id: 1,
               city: "Denver",
               state: "CO",
               country: "USA"
             )
-game3 = Game.create(score: 50,
+score_3 = Score.create(score: 50,
               game_time: 1.0,
               user_id: 2,
               city: "Denver",
               state: "CO",
               country: "USA"
             )
-game4 = Game.create(score: 100,
+score_4 = Score.create(score: 100,
               game_time: 2.2,
               user_id: 3,
               city: "Chicago",
@@ -35,42 +35,42 @@ game4 = Game.create(score: 100,
               country: "USA"
             )
 
-game5 = Game.create(score: 100,
+score_5 = Score.create(score: 100,
               game_time: 0.04,
               user_id: 3,
               city: "Athens",
               state: "nil",
               country: "Greece"
             )
-game6 = Game.create(score: 100,
+score_6 = Score.create(score: 100,
               game_time: 1.6,
               user_id: 4,
               city: "Athens",
               state: "nil",
               country: "Greece"
             )
-game7 = Game.create(score: 5,
+score_7 = Score.create(score: 5,
               game_time: 100,
               user_id: 5,
               city: "Detroit",
               state: "MI",
               country: "USA"
             )
-game8 = Game.create(score: 150,
+score_8 = Score.create(score: 150,
               game_time: 60.3,
               user_id: 7,
               city: "Chicago",
               state: "IL",
               country: "USA"
             )
-game9 = Game.create(score: 250,
+score_9 = Score.create(score: 250,
               game_time: 1.5,
               user_id: 5,
               city: "Tampa",
               state: "FL",
               country: "USA"
             )
-game10 = Game.create(score: 8000,
+score_10 = Score.create(score: 8000,
               game_time: 4.20,
               user_id: 69,
               city: "Las Vegas",

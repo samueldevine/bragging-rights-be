@@ -1,29 +1,29 @@
 require 'rails_helper'
 
-RSpec.describe "Games Index" do
+RSpec.describe "Scores Index" do
   before :each do
-    @game = Game.create(score: 100,
+    @score_1 = Score.create(score: 100,
                   game_time: 1.5,
                   user_id: 1,
                   city: "Denver",
                   state: "CO",
                   country: "USA"
                 )
-    @game2 = Game.create(score: 10,
+    @score_2 = Score.create(score: 10,
                   game_time: 1.3,
                   user_id: 1,
                   city: "Denver",
                   state: "CO",
                   country: "USA"
                 )
-    @game3 = Game.create(score: 50,
+    @score_3 = Score.create(score: 50,
                   game_time: 1.0,
                   user_id: 2,
                   city: "Denver",
                   state: "CO",
                   country: "USA"
                 )
-    @game4 = Game.create(score: 100,
+    @score_4 = Score.create(score: 100,
                   game_time: 2.2,
                   user_id: 3,
                   city: "Chicago",
@@ -31,42 +31,42 @@ RSpec.describe "Games Index" do
                   country: "USA"
                 )
 
-    @game5 = Game.create(score: 100,
+    @score_5 = Score.create(score: 100,
                   game_time: 0.04,
                   user_id: 3,
                   city: "Athens",
                   state: "nil",
                   country: "Greece"
                 )
-    @game6 = Game.create(score: 100,
+    @score_6 = Score.create(score: 100,
                   game_time: 1.6,
                   user_id: 4,
                   city: "Athens",
                   state: "nil",
                   country: "Greece"
                 )
-    @game7 = Game.create(score: 5,
+    @score_7 = Score.create(score: 5,
                   game_time: 100,
                   user_id: 5,
                   city: "Detroit",
                   state: "MI",
                   country: "USA"
                 )
-    @game8 = Game.create(score: 150,
+    @score_8 = Score.create(score: 150,
                   game_time: 60.3,
                   user_id: 7,
                   city: "Chicago",
                   state: "IL",
                   country: "USA"
                 )
-    @game9 = Game.create(score: 250,
+    @score_9 = Score.create(score: 250,
                   game_time: 1.5,
                   user_id: 5,
                   city: "Tampa",
                   state: "FL",
                   country: "USA"
                 )
-    @game10 = Game.create(score: 8000,
+    @score_10 = Score.create(score: 8000,
                   game_time: 4.20,
                   user_id: 69,
                   city: "Las Vegas",
@@ -77,7 +77,7 @@ RSpec.describe "Games Index" do
   end
 
   it 'can dynamically render top scores by location' do
-    get '/api/v1/games', params: {user_location: "Denver", geo_scope: "city"}
+    get '/api/v1/scores', params: {user_location: "Denver", geo_scope: "city"}
     expect(response).to be_successful
     scores = JSON.parse(response.body, symbolize_names: true)
     expect(scores[:data].count).to eq(3)
@@ -91,7 +91,7 @@ RSpec.describe "Games Index" do
       expect(score[:attributes][:game_time]).to be_a Float
     end
 
-    get '/api/v1/games', params: {user_location: "USA", geo_scope: "country"}
+    get '/api/v1/scores', params: {user_location: "USA", geo_scope: "country"}
     scores = JSON.parse(response.body, symbolize_names: true)
     
     expect(scores[:data].count).to eq(5)
@@ -106,25 +106,26 @@ RSpec.describe "Games Index" do
     end
   end
   
-  it "can send the game with the highest score" do
-     game = Game.create!(user_id: 7, score: 100, city: 'Chicago', state: 'Illinois', country: 'United States')
+  it "can send the highest score by user id" do
+     high_score = Score.create!(user_id: 15, score: 100, city: 'Chicago', state: 'Illinois', country: 'United States')
 
-     get "/api/v1/games/#{game.id}", params: {user_id: 7}
+     get "/api/v1/scores/#{high_score.id}", params:{user_id: high_score.user_id}
 
      expect(response).to be_successful
 
-     game = JSON.parse(response.body, symbolize_names: true)
+     score = JSON.parse(response.body, symbolize_names: true)
 
-     expect(game[:data]).to be_a(Hash)
-     expect(game[:data]).to have_key(:id)
-     expect(game[:data]).to have_key(:type)
-     expect(game[:data]).to have_key(:attributes)
-     expect(game[:data][:attributes]).to have_key(:score)
-     expect(game[:data][:attributes]).to have_key(:game_time)
-     expect(game[:data][:attributes]).to have_key(:user_id)
-     expect(game[:data][:attributes]).to have_key(:city)
-     expect(game[:data][:attributes]).to have_key(:state)
-     expect(game[:data][:attributes]).to have_key(:country)
+     expect(score[:data]).to be_a(Hash)
+     expect(score[:data]).to have_key(:id)
+     expect(score[:data]).to have_key(:type)
+     expect(score[:data]).to have_key(:attributes)
+     expect(score[:data][:attributes]).to have_key(:score)
+     expect(score[:data][:attributes][:score]).to eq(high_score.score)
+     expect(score[:data][:attributes]).to have_key(:game_time)
+     expect(score[:data][:attributes]).to have_key(:user_id)
+     expect(score[:data][:attributes]).to have_key(:city)
+     expect(score[:data][:attributes]).to have_key(:state)
+     expect(score[:data][:attributes]).to have_key(:country)
   end
 end
 
