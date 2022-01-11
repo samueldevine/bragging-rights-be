@@ -12,9 +12,10 @@ A Comic Trivia Challenge (2 week sprint)
 
 "Bragging Rights" is a trivia competition app designed to consume two external APIs to gather questions and location data of players, and pass the information to our front-end application. It's also responsible for scoring games, containing the score and location data received from the players.
 
-
 ## Architecture
-This app is created with a service oriented architecture.
+This app uses a service-oriented architecture, with seperate frontend and backend rails applications. This is the **backend** repository. Users of Bragging rights don't interact with this repository directly, but rather through the frontend app [here](https://github.com/samueldevine/bragging-rights-fe). The backend application is responsible for making API calls to the APIs listed below, storing game data when users complete a quiz, and making that data available through several endpoints to be consumed by the frontend.
+
+For a relatively small app like this, there aren't many advantages to choosing a SOA over a Rails monolith. However, gaining some exposure to SOA was one of our primary learning goals for this project, and we chose to implement it simply in pursuit of learning more about what it takes to build professional web applications in this style. 
 
 ## Schema
 ![Imgur](https://i.imgur.com/KHEeyvF.png)
@@ -123,4 +124,7 @@ Example Response:
 
 ## APIs
 
-<!-- Potentially add links to the APIs we are using or move the description to this section -->
+We used 3 different APIs in this project. They are listed below:
+1. [Open Trivia Database](https://opentdb.com/api_config.php)
+2. [IP Geolocation API](https://ip-api.com/)
+3. [Twitter API](https://developer.twitter.com/en/docs/twitter-api)
