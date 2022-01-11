@@ -36,12 +36,19 @@ For a relatively small app like this, there aren't many advantages to choosing a
 * Run the test suite with `bundle exec rspec`.
 * Run your development server with `rails s` to see the app in action.
 
-## The following endpoints are built for the platform:
+## Endpoints
+
+The backend API base path is:
+
+```
+https://fast-inlet-74665.herokuapp.com/api/v1/{query}
+```
+_{query}_ should be replaced with one of the following endpoints.
 
 #### 1. Questions
 
 ```ruby
-   GET /api/v1/questions
+   GET questions
 ```   
 Returns a collection of comic-themed, multiple choice trivia questions, and their correct answers. The correct answer is included in the "answers" array, in a random (shuffled) position.
 Example response:
@@ -70,20 +77,23 @@ Example response:
 #### 2. High Scores (all users)
 
 ```ruby
-   GET /api/v1/scores?GEO_SCOPE=USER_LOCATION
+   GET scores
 ```
-GEO_SCOPE is an _optional_ parameter for filtering results. Options for GEO_SCOPE include
-   - city
-   - state
-   - country
-The following are all valid calls:
+
+This endpoint will return 20 scores from the database, sorted from high to low. These results can optionally be filtered by location using the `geo_scope` parameters below.
+
+##### GEO_SCOPE Parameters and Usage
+   - `city={city}`
+   - `state={state}`
+   - `country={country}`
+
+The following examples are all valid calls:
 ```ruby
    GET /api/v1/scores?city=Denver
    GET /api/v1/scores?state=Colorado
    GET /api/v1/scores?country=United+States
 ```
 
-If left out, this endpoint will return unfiltered results from any location.
 ***
 #### 3. High Scores (single user)
 
