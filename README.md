@@ -50,7 +50,7 @@ _{query}_ should be replaced with one of the following endpoints.
 ```ruby
    GET questions
 ```   
-Returns a collection of comic-themed, multiple choice trivia questions, and their correct answers. The correct answer is included in the "answers" array, in a random (shuffled) position.
+Returns a collection of 5 comic-themed, multiple choice trivia questions, and their correct answers. The correct answer is included in the "answers" array, in a random (shuffled) position. The questions are limited to what is availabe in the [OpenTDB API](https://opentdb.com/api_config.php), so you may start to notice repeated questions on multiple calls. As of 01.12.22, only 50 questions can be returned.
 Example response:
 ```
    {
@@ -74,35 +74,30 @@ Example response:
    }
 ```
 ***
-#### 2. High Scores (all users)
+#### 2. High Scores
 
 ```ruby
    GET scores
 ```
 
-This endpoint will return 20 scores from the database, sorted from high to low. These results can optionally be filtered by location using the `geo_scope` parameters below.
+This endpoint will return 20 scores from the database, sorted from high to low. These results can optionally be filtered by location _or_ user (but not both) using the parameters below.
 
-##### GEO_SCOPE Parameters and Usage
+##### Parameters and Usage
    - `city={city}`
    - `state={state}`
    - `country={country}`
+   - `user_id={user_id}`
 
 The following examples are all valid calls:
 ```ruby
    GET /api/v1/scores?city=Denver
    GET /api/v1/scores?state=Colorado
    GET /api/v1/scores?country=United+States
+   GET /api/v1/scores?user_id=1  # assumes there is a user with id = 1 in the database
 ```
 
 ***
-#### 3. High Scores (single user)
-
-```ruby
-   GET /api/v1/scores/:id, params: {user_id: user.id}
-```
-Returns an individual user's highest score.
-***
-#### 4. Record a Game
+#### 3. Record a Game
 
 ```ruby
    POST /api/v1/scores 
@@ -110,7 +105,7 @@ Returns an individual user's highest score.
 Record new scores to the database. Must include the following information:
 ???
 ***
-#### 5. User Location
+#### 4. User Location
 
 ```ruby
    GET /api/v1/locations?ip_address=<user_ip_address>
