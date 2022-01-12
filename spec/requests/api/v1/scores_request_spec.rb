@@ -109,23 +109,25 @@ RSpec.describe "Scores Index" do
   it "can send the highest score by user id" do
      high_score = Score.create!(user_id: 15, score: 100, city: 'Chicago', state: 'Illinois', country: 'United States')
 
-     get "/api/v1/scores/#{high_score.id}", params:{user_id: high_score.user_id}
+     get "/api/v1/scores", params:{user_id: high_score.user_id}
 
      expect(response).to be_successful
 
      score = JSON.parse(response.body, symbolize_names: true)
+     # require "pry"; binding.pry
 
-     expect(score[:data]).to be_a(Hash)
-     expect(score[:data]).to have_key(:id)
-     expect(score[:data]).to have_key(:type)
-     expect(score[:data]).to have_key(:attributes)
-     expect(score[:data][:attributes]).to have_key(:score)
-     expect(score[:data][:attributes][:score]).to eq(high_score.score)
-     expect(score[:data][:attributes]).to have_key(:game_time)
-     expect(score[:data][:attributes]).to have_key(:user_id)
-     expect(score[:data][:attributes]).to have_key(:city)
-     expect(score[:data][:attributes]).to have_key(:state)
-     expect(score[:data][:attributes]).to have_key(:country)
+     expect(score[:data]).to be_a(Array)
+     score[:data].each do |s|
+       expect(s).to have_key(:id)
+       expect(s).to have_key(:type)
+       expect(s).to have_key(:attributes)
+       expect(s[:attributes]).to have_key(:score)
+       expect(s[:attributes][:score]).to eq(high_score.score)
+       expect(s[:attributes]).to have_key(:user_id)
+       expect(s[:attributes]).to have_key(:city)
+       expect(s[:attributes]).to have_key(:state)
+       expect(s[:attributes]).to have_key(:country)
+     end
   end
 
   it 'can create a new score', :vcr do
