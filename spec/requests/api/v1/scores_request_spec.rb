@@ -93,7 +93,7 @@ RSpec.describe "Scores Index" do
 
     get '/api/v1/scores', params: {user_location: "USA", geo_scope: "country"}
     scores = JSON.parse(response.body, symbolize_names: true)
-    
+
     expect(scores[:data].count).to eq(5)
 
     scores[:data].each do |score|
@@ -105,7 +105,7 @@ RSpec.describe "Scores Index" do
       expect(score[:attributes][:game_time]).to be_a Float
     end
   end
-  
+
   it "can send the highest score by user id" do
      high_score = Score.create!(user_id: 15, score: 100, city: 'Chicago', state: 'Illinois', country: 'United States')
 
@@ -129,7 +129,7 @@ RSpec.describe "Scores Index" do
   end
 
   it 'can create a new score', :vcr do
-    game_params = {user_id: 7, score: 1000, ip_address: '98.160.143.100', game_time: 5.30}
+    game_params = {user_id: 7, score: 1000, ip_address: '98.160.143.100'}
     headers = {"CONTENT_TYPE" => "application/json"}
 
     post '/api/v1/scores', headers: headers, params: JSON.generate(score: game_params)
@@ -140,7 +140,5 @@ RSpec.describe "Scores Index" do
     expect(created_score.user_id).to eq(game_params[:user_id])
     expect(created_score.score).to eq(game_params[:score])
     expect(created_score.city).to eq('Las Vegas')
-    expect(created_score.game_time).to eq(game_params[:game_time])
   end
 end
-
