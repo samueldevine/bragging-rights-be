@@ -14,7 +14,7 @@ class Question
     @type               = info[:type]
     #left out for proof of concept but need for stretch scoring goals
     # @difficulty         = info[:difficulty]
-    @question           = info[:question]
+    @question           = CGI.unescapeHTML(info[:question])
     @correct_answer     = info[:correct_answer]
     @incorrect_answers  = info[:incorrect_answers]
     @answers            = randomized_answers
@@ -23,6 +23,13 @@ class Question
   def randomized_answers
     sample = []
     sample << @incorrect_answers && sample << @correct_answer
-    sample.flatten.shuffle!
+    sample.flatten!.shuffle!
+    sample = html_cleanup(sample)
+  end
+
+  def html_cleanup(sample)
+    sample.map do |answer|
+      CGI.unescapeHTML(answer)
+    end
   end
 end
