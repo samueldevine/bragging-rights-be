@@ -103,8 +103,12 @@ The following examples are all valid calls:
 ```ruby
    POST scores 
 ```
-Record new scores to the database. Must include the following information:
-???
+Record new scores to the database. **All of the following parameters are required:**
+
+- `user_id={user_id}`
+- `score={score}`
+- `ip_address={user_ip_address}`
+
 ***
 #### 4. User Location
 
