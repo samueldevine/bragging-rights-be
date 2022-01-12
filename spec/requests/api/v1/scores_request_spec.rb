@@ -114,7 +114,6 @@ RSpec.describe "Scores Index" do
      expect(response).to be_successful
 
      score = JSON.parse(response.body, symbolize_names: true)
-     # require "pry"; binding.pry
 
      expect(score[:data]).to be_a(Array)
      score[:data].each do |s|

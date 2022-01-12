@@ -9,7 +9,6 @@ class Score < ApplicationRecord
   # end
 
   def self.top_5_highest_scores(params)
-    # require "pry"; binding.pry
     if params.has_key?(:geo_scope)
       where("#{params[:geo_scope]} = '#{params[:user_location]}'").order(score: :desc).limit(5)
     elsif params.has_key?(:user_id)
