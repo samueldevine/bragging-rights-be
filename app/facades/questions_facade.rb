@@ -5,6 +5,6 @@ class QuestionsFacade
       id += 1
       t[:id] = "#{id}"
       Question.new(t)
-    end
+    end.shuffle![0..4]
   end
 end
