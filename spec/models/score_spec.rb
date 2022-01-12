@@ -36,11 +36,17 @@ RSpec.describe Score do
 
   describe 'methods' do
     it 'can find top score by user' do
-      expect(Score.high_score(@user_id)).to eq(@score_1)
+      scores_by_player_id = Score.top_5_highest_scores({user_id: @user_id})
+
+      expect(scores_by_player_id).to eq([@score_1, @score_2])
     end
 
     it 'can find top score by city' do
-      expect(Score.top_scores_by_location("city", "Denver")).to eq([@score_1, @score_3, @score_2])
+      scores_by_city = Score.top_5_highest_scores({geo_scope: "city", user_location: 'Denver'})
+      expected = scores_by_city.map do |score|
+        score
+      end
+      expect(expected).to eq([@score_1, @score_3, @score_2])
     end
   end
 end
