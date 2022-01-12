@@ -83,6 +83,7 @@ Example response:
 This endpoint will return 20 scores from the database, sorted from high to low. These results can optionally be filtered by location _or_ user (but not both) using the parameters below.
 
 ##### Parameters and Usage
+Please note that **only one** parameter may be passed to this endpoint, but none are required. Passing more than one parameter or invalid data will return an error.
    - `city={city}`
    - `state={state}`
    - `country={country}`
@@ -90,17 +91,17 @@ This endpoint will return 20 scores from the database, sorted from high to low. 
 
 The following examples are all valid calls:
 ```ruby
-   GET /api/v1/scores?city=Denver
-   GET /api/v1/scores?state=Colorado
-   GET /api/v1/scores?country=United+States
-   GET /api/v1/scores?user_id=1  # assumes there is a user with id = 1 in the database
+   GET scores?city=Denver
+   GET scores?state=Colorado
+   GET scores?country=United+States
+   GET scores?user_id=1  # assumes there is a user with id = 1 in the database
 ```
 
 ***
 #### 3. Record a Game
 
 ```ruby
-   POST /api/v1/scores 
+   POST scores 
 ```
 Record new scores to the database. Must include the following information:
 ???
@@ -108,9 +109,9 @@ Record new scores to the database. Must include the following information:
 #### 4. User Location
 
 ```ruby
-   GET /api/v1/locations?ip_address=<user_ip_address>
+   GET locations?ip_address={user_ip_address}
 ```
-Returns a user's city, state, and country to store game data and make comparing scores a breeze. Specify the user's actual IP Address as a required query parameter. Without it, incorrect locations may be returned.
+Returns a user's city, state, and country to store game data and make comparing scores a breeze. **The user's actual IP Address is a required query parameter.** Without it, incorrect locations may be returned. Note: a null value for `id` will always be returned.
 
 Example Response:
 ```
