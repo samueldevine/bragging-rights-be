@@ -1,10 +1,10 @@
 class QuestionsFacade
   def self.trivia
     id = 0
-    QuestionsService.trivia[:results].map do |t|
+    questions = QuestionsService.trivia[:results].map do |t|
       id += 1
       t[:id] = "#{id}"
       Question.new(t)
-    end
+    end.shuffle![0..4]
   end
 end

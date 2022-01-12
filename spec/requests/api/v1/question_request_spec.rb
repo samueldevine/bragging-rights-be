@@ -8,8 +8,8 @@ RSpec.describe 'Questions Index' do
     expect(response).to be_successful
 
     questions = JSON.parse(response.body, symbolize_names: true)
-
-    expect(questions[:data].count).to eq(50)
+    
+    expect(questions[:data].count).to eq(5)
     questions[:data].each do |question|
       expect(question[:attributes]).to have_key(:id)
       expect(question[:attributes][:id]).to be_a(String)
