@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 2022_01_10_182006) do
   enable_extension "plpgsql"
 
   create_table "scores", force: :cascade do |t|
-    t.integer "user_id"
+    t.bigint "user_id"
     t.integer "score"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
