@@ -1,4 +1,6 @@
 class Score < ApplicationRecord
+  validates_presence_of :score
+  validates_presence_of :user_id
 
   def self.top_5_highest_scores(params = {})
     if params.has_key?(:geo_scope) && params[:geo_scope] != 'world'
