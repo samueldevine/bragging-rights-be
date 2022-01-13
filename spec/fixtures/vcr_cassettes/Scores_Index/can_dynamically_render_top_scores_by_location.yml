@@ -1,0 +1,76 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://ip-api.com/json/73.217.89.89
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.0.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 13 Jan 2022 01:15:57 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '335'
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Ttl:
+      - '17'
+      X-Rl:
+      - '41'
+    body:
+      encoding: UTF-8
+      string: '{"status":"success","country":"United States","countryCode":"US","region":"CO","regionName":"Colorado","city":"Denver","zip":"80206","lat":39.7321,"lon":-104.9555,"timezone":"America/Denver","isp":"Comcast
+        Cable Communications","org":"Comcast IP Services, L.L.C.","as":"AS7922 Comcast
+        Cable Communications, LLC","query":"73.217.89.89"}'
+  recorded_at: Thu, 13 Jan 2022 01:15:57 GMT
+- request:
+    method: get
+    uri: http://ip-api.com/json/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.0.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 13 Jan 2022 01:15:57 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '319'
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Ttl:
+      - '17'
+      X-Rl:
+      - '40'
+    body:
+      encoding: UTF-8
+      string: '{"status":"success","country":"United States","countryCode":"US","region":"NV","regionName":"Nevada","city":"Las
+        Vegas","zip":"89169","lat":36.1214,"lon":-115.141,"timezone":"America/Los_Angeles","isp":"Cox
+        Communications Inc.","org":"Cox Communications","as":"AS22773 Cox Communications
+        Inc.","query":"98.160.143.100"}'
+  recorded_at: Thu, 13 Jan 2022 01:15:57 GMT
+recorded_with: VCR 6.0.0
