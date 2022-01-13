@@ -8,7 +8,7 @@ class Score < ApplicationRecord
   #   where("#{geo_scope} = '#{user_location}'").order(score: :desc).limit(5)
   # end
 
-  def self.top_5_highest_scores(params)
+  def self.top_5_highest_scores(params = {})
     if params.has_key?(:geo_scope)
       where("#{params[:geo_scope]} = '#{params[:user_location]}'").order(score: :desc).limit(5)
     elsif params.has_key?(:user_id)
