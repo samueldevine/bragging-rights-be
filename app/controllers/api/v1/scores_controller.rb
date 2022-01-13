@@ -5,7 +5,12 @@ class Api::V1::ScoresController < ApplicationController
   end
 
   def create
-    Score.create(score_params)
+    new_score = Score.create(score_params)
+    if new_score.save
+    else
+      render json: { errors: { details: 'Superman says: "Cheaters Never Win"' } },
+             status: 403
+    end
   end
 
   private

@@ -19,20 +19,21 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Thu, 13 Jan 2022 05:28:47 GMT
+      - Thu, 13 Jan 2022 22:02:30 GMT
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
-      - '284'
+      - '348'
       Access-Control-Allow-Origin:
       - "*"
       X-Ttl:
-      - '60'
+      - '59'
       X-Rl:
-      - '44'
+      - '43'
     body:
       encoding: UTF-8
-      string: '{"status":"success","country":"United States","countryCode":"US","region":"CO","regionName":"Colorado","city":"Denver","zip":"80203","lat":39.7277,"lon":-104.9815,"timezone":"America/Denver","isp":"Starry,
-        Inc.","org":"Starry, Inc","as":"AS395354 Starry, Inc.","query":"38.34.99.130"}'
-  recorded_at: Thu, 13 Jan 2022 05:28:47 GMT
+      string: '{"status":"success","country":"United States","countryCode":"US","region":"CO","regionName":"Colorado","city":"Denver","zip":"80205","lat":39.7593,"lon":-104.9651,"timezone":"America/Denver","isp":"Comcast
+        Cable Communications, LLC","org":"Comcast Cable Communications, Inc.","as":"AS7922
+        Comcast Cable Communications, LLC","query":"71.205.12.163"}'
+  recorded_at: Thu, 13 Jan 2022 22:02:31 GMT
 recorded_with: VCR 6.0.0

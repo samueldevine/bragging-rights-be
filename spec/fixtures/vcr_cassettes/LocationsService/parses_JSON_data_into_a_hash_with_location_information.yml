@@ -19,7 +19,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Thu, 13 Jan 2022 05:16:55 GMT
+      - Thu, 13 Jan 2022 22:02:31 GMT
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
@@ -27,12 +27,12 @@ http_interactions:
       Access-Control-Allow-Origin:
       - "*"
       X-Ttl:
-      - '53'
+      - '58'
       X-Rl:
-      - '42'
+      - '41'
     body:
       encoding: UTF-8
       string: '{"status":"success","country":"United States","countryCode":"US","region":"CO","regionName":"Colorado","city":"Denver","zip":"80203","lat":39.7277,"lon":-104.9815,"timezone":"America/Denver","isp":"Starry,
         Inc.","org":"Starry, Inc","as":"AS395354 Starry, Inc.","query":"38.34.99.130"}'
-  recorded_at: Thu, 13 Jan 2022 05:16:56 GMT
+  recorded_at: Thu, 13 Jan 2022 22:02:31 GMT
 recorded_with: VCR 6.0.0
