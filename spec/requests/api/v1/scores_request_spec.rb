@@ -7,25 +7,25 @@ RSpec.describe 'Scores Index' do
                             user_id: 1,
                             city: 'Denver',
                             state: 'CO',
-                            country: 'USA')
+                            country: 'United States')
     @score_2 = Score.create(score: 10,
                             game_time: 1.3,
                             user_id: 1,
                             city: 'Denver',
                             state: 'CO',
-                            country: 'USA')
+                            country: 'United States')
     @score_3 = Score.create(score: 50,
                             game_time: 1.0,
                             user_id: 2,
                             city: 'Denver',
                             state: 'CO',
-                            country: 'USA')
+                            country: 'United States')
     @score_4 = Score.create(score: 100,
                             game_time: 2.2,
                             user_id: 3,
                             city: 'Chicago',
                             state: 'IL',
-                            country: 'USA')
+                            country: 'United States')
 
     @score_5 = Score.create(score: 100,
                             game_time: 0.04,
@@ -44,25 +44,25 @@ RSpec.describe 'Scores Index' do
                             user_id: 5,
                             city: 'Detroit',
                             state: 'MI',
-                            country: 'USA')
+                            country: 'United States')
     @score_8 = Score.create(score: 150,
                             game_time: 60.3,
                             user_id: 7,
                             city: 'Chicago',
                             state: 'IL',
-                            country: 'USA')
+                            country: 'United States')
     @score_9 = Score.create(score: 250,
                             game_time: 1.5,
                             user_id: 5,
                             city: 'Tampa',
                             state: 'FL',
-                            country: 'USA')
+                            country: 'United States')
     @score_10 = Score.create(score: 8000,
                              game_time: 4.20,
                              user_id: 69,
                              city: 'Las Vegas',
                              state: 'NV',
-                             country: 'USA')
+                             country: 'United States')
   end
 
   it 'can dynamically render top scores by location', :vcr do
@@ -85,7 +85,7 @@ RSpec.describe 'Scores Index' do
     scores = JSON.parse(response.body, symbolize_names: true)
 
     expect(scores[:data].count).to eq(5)
-    require "pry"; binding.pry
+
     scores[:data].each do |score|
       expect(score[:attributes]).to have_key :user_id
       expect(score[:attributes][:user_id]).to be_an Integer
@@ -96,7 +96,7 @@ RSpec.describe 'Scores Index' do
     end
   end
 
-  it 'can send the highest score by user id' do
+  it 'can send the highest score by user id', :vcr do
     high_score = Score.create!(user_id: 15, score: 100, city: 'Chicago',
                                state: 'Illinois', country: 'United States')
 

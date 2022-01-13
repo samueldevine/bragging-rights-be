@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://ip-api.com/json/98.160.143.100
+    uri: http://ip-api.com/json/8.160.143.10
     body:
       encoding: US-ASCII
       string: ''
@@ -19,22 +19,20 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Thu, 13 Jan 2022 05:18:31 GMT
+      - Thu, 13 Jan 2022 05:16:49 GMT
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
-      - '319'
+      - '292'
       Access-Control-Allow-Origin:
       - "*"
       X-Ttl:
       - '59'
       X-Rl:
-      - '42'
+      - '43'
     body:
       encoding: UTF-8
-      string: '{"status":"success","country":"United States","countryCode":"US","region":"NV","regionName":"Nevada","city":"Las
-        Vegas","zip":"89169","lat":36.1214,"lon":-115.141,"timezone":"America/Los_Angeles","isp":"Cox
-        Communications Inc.","org":"Cox Communications","as":"AS22773 Cox Communications
-        Inc.","query":"98.160.143.100"}'
-  recorded_at: Thu, 13 Jan 2022 05:18:32 GMT
+      string: '{"status":"success","country":"China","countryCode":"CN","region":"BJ","regionName":"Beijing","city":"Beijing","zip":"","lat":39.9042,"lon":116.407,"timezone":"Asia/Shanghai","isp":"Alibaba.com
+        Singapore E-Commerce Private Limited","org":"Aliyun Computing Co.","as":"","query":"8.160.143.10"}'
+  recorded_at: Thu, 13 Jan 2022 05:16:49 GMT
 recorded_with: VCR 6.0.0

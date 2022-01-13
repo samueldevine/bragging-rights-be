@@ -19,7 +19,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Thu, 13 Jan 2022 01:15:57 GMT
+      - Thu, 13 Jan 2022 05:18:31 GMT
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
@@ -27,18 +27,18 @@ http_interactions:
       Access-Control-Allow-Origin:
       - "*"
       X-Ttl:
-      - '17'
+      - '60'
       X-Rl:
-      - '41'
+      - '44'
     body:
       encoding: UTF-8
       string: '{"status":"success","country":"United States","countryCode":"US","region":"CO","regionName":"Colorado","city":"Denver","zip":"80206","lat":39.7321,"lon":-104.9555,"timezone":"America/Denver","isp":"Comcast
         Cable Communications","org":"Comcast IP Services, L.L.C.","as":"AS7922 Comcast
         Cable Communications, LLC","query":"73.217.89.89"}'
-  recorded_at: Thu, 13 Jan 2022 01:15:57 GMT
+  recorded_at: Thu, 13 Jan 2022 05:18:32 GMT
 - request:
     method: get
-    uri: http://ip-api.com/json/
+    uri: http://ip-api.com/json/73.217.89.89
     body:
       encoding: US-ASCII
       string: ''
@@ -55,22 +55,21 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Thu, 13 Jan 2022 01:15:57 GMT
+      - Thu, 13 Jan 2022 05:18:31 GMT
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
-      - '319'
+      - '335'
       Access-Control-Allow-Origin:
       - "*"
       X-Ttl:
-      - '17'
+      - '59'
       X-Rl:
-      - '40'
+      - '43'
     body:
       encoding: UTF-8
-      string: '{"status":"success","country":"United States","countryCode":"US","region":"NV","regionName":"Nevada","city":"Las
-        Vegas","zip":"89169","lat":36.1214,"lon":-115.141,"timezone":"America/Los_Angeles","isp":"Cox
-        Communications Inc.","org":"Cox Communications","as":"AS22773 Cox Communications
-        Inc.","query":"98.160.143.100"}'
-  recorded_at: Thu, 13 Jan 2022 01:15:57 GMT
+      string: '{"status":"success","country":"United States","countryCode":"US","region":"CO","regionName":"Colorado","city":"Denver","zip":"80206","lat":39.7321,"lon":-104.9555,"timezone":"America/Denver","isp":"Comcast
+        Cable Communications","org":"Comcast IP Services, L.L.C.","as":"AS7922 Comcast
+        Cable Communications, LLC","query":"73.217.89.89"}'
+  recorded_at: Thu, 13 Jan 2022 05:18:32 GMT
 recorded_with: VCR 6.0.0
