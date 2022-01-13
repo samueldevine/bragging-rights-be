@@ -65,8 +65,9 @@ RSpec.describe 'Scores Index' do
                              country: 'USA')
   end
 
-  it 'can dynamically render top scores by location' do
-    get '/api/v1/scores', params: { user_location: 'Denver', geo_scope: 'city' }
+  it 'can dynamically render top scores by location', :vcr do
+    get '/api/v1/scores', params: {ip_address: '73.217.89.89', geo_scope: "city"}
+
     expect(response).to be_successful
     scores = JSON.parse(response.body, symbolize_names: true)
     expect(scores[:data].count).to eq(3)
@@ -80,11 +81,11 @@ RSpec.describe 'Scores Index' do
       expect(score[:attributes][:game_time]).to be_a Float
     end
 
-    get '/api/v1/scores', params: { user_location: 'USA', geo_scope: 'country' }
+    get '/api/v1/scores', params: {ip_address: '73.217.89.89', geo_scope: "country"}
     scores = JSON.parse(response.body, symbolize_names: true)
 
     expect(scores[:data].count).to eq(5)
-
+    require "pry"; binding.pry
     scores[:data].each do |score|
       expect(score[:attributes]).to have_key :user_id
       expect(score[:attributes][:user_id]).to be_an Integer
