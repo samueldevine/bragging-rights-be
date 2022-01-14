@@ -5,11 +5,11 @@ class QuestionsService
     end
 
     def trivia
-      get_url("api.php?amount=500&category=29&type=multiple")
+      get_url('api.php?amount=500&category=29&type=multiple')
     end
 
     def conn
-      Faraday.new("https://opentdb.com/")
+      Faraday.new('https://opentdb.com/')
     end
 
     def parse_data(response)

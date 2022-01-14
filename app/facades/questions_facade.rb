@@ -3,7 +3,7 @@ class QuestionsFacade
     id = 0
     QuestionsService.trivia[:results].map do |t|
       id += 1
-      t[:id] = "#{id}"
+      t[:id] = id.to_s
       Question.new(t)
     end.shuffle![0..4]
   end
