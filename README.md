@@ -3,7 +3,7 @@
 
 A Comic Trivia Challenge (2 week sprint)
 ----------------------------------------
-### Chaz Simons, Sam Devine, Matthew Kimball, Ted Staros & Christian Valesares
+### [Chaz Simons](https://github.com/chazsimons), [Sam Devine](https://github.com/samueldevine), [Matthew Kimball](https://github.com/mekimball), [Ted Staros](https://github.com/tstaros23) & [Christian Valesares](https://github.com/cvalesares)
 
 ![CircleCI](https://img.shields.io/circleci/build/github/samueldevine/bragging-rights-be/main)
 ![Ruby](https://img.shields.io/badge/Ruby-v2.7.2-red)
