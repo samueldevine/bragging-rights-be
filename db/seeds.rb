@@ -63,9 +63,9 @@ score_8 = Score.create(score: 150,
               state: "Illinois",
               country: "United States"
             )
-score_9 = Score.create(score: 250,
+score_9 = Score.create(score: 25000,
               game_time: 1.5,
-              user_id: 362111173,
+              user_id: 462111173,
               city: "Tampa",
               state: "Florida",
               country: "United States"
