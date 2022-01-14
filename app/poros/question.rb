@@ -12,7 +12,7 @@ class Question
     @id                 = info[:id]
     @category           = info[:category]
     @type               = info[:type]
-    #left out for proof of concept but need for stretch scoring goals
+    # left out for proof of concept but need for stretch scoring goals
     # @difficulty         = info[:difficulty]
     @question           = CGI.unescapeHTML(info[:question])
     @correct_answer     = info[:correct_answer]
