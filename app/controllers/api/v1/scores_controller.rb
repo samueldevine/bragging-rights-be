@@ -1,6 +1,6 @@
 class Api::V1::ScoresController < ApplicationController
   def index
-    get_user_location(params[:geo_scope], params[:ip_address])
+    get_user_location(params[:params][:geo_scope], params[:params][:ip_address])
     render json: ScoreSerializer.new(Score.top_5_highest_scores(params))
   end
 
